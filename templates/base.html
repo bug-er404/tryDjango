@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} | TRY DJANGO {% endblock title%}</title>
+</head>
+<body>
+<div class = "container">
+{% include 'navigation.html' %}
+
+{% block content %}
+
+{% endblock %}
+
+<h1>Welcome to Try Django.</h1>
+
+{% block content1 %}
+
+{% endblock %}
+</div>
+
+</body>
+</html>

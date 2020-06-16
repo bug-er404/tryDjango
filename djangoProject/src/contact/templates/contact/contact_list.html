@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Product List
+{% endblock %}
+
+{% block content1 %}
+    <h2> Inventory List </h2>
+    {% for each_product in objects %}
+            <ul>
+                <li>
+                    <!--<a href = "/product/{{each_product}}/">{{each_product}}</a>-->
+                    <!--<a href = "{{ each_product.get_absolute_url}}">{{each_product}}</a>-->
+                    <a href = "{% url 'main_product:product_detail' each_product.slug %}">{{each_product}}</a>
+
+                </li>
+
+            </ul>
+    {% endfor %}
+{% endblock %}

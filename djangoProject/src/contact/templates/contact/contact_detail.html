@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Product Detail
+{% endblock %}
+
+{%block content1%}
+<h1>In app Template : {{object.title}} | {{object.id}}</h1>
+<p>
+    <!--<a href = "/product/{{object.title}}/delete/ ">-->
+    <a href =" {%url 'main_product:product_detail' object%}}">
+        <button> Delete Product </button>
+    </a>
+    <br>
+    <br>
+    {% if object.description == None or object.description == "" %}
+    <b>Detail</b> : Description Coming Soon
+    {%else%}
+    <b>Detail</b>:{{object.description}}
+    {%endif%}
+    <br/>
+    <b>Price</b>:{{object.price}}
+    <br/>
+    <b>Summary</b>:{{object.summary}}
+
+    <br>
+    <!--<a href = "/product/">-->
+    <a href =" {%url 'main_product:product_list' %}}">
+        <button> Inventory </button>
+    </a>
+</p>
+{%endblock%}
